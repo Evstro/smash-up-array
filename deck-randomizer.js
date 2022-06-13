@@ -1,9 +1,9 @@
 //event listener to run functions to get two random factions
-// then to remove the set selector
 const randomButton = document.getElementById('random');
-const setBox = document.getElementById('setbox');
+
 randomButton.addEventListener('click', e => {
     e.preventDefault;
+    randomFactions();
     if(factions.length === 0) {
         console.log('Please create faction list first')
     } else {
@@ -35,3 +35,11 @@ const randomFactionTwo = () => {
     
     return factionOne;
 }
+
+//function to randomize decks for X amount of players
+const numOfPlayers = document.getElementById('numberofplayers');
+const randomFactions = () => {
+    for(let i = 0; i < numOfPlayers; i++) {
+        console.log('success', i);
+    }
+};

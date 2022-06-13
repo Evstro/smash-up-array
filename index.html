@@ -6,8 +6,8 @@
     <title>Document</title>
 </head>
 <body>
-    
-    <form>
+    <ul id="factionlist"></ul>
+    <form id="setbox">
         <fieldset>
             <input type="checkbox" name="chk-base" id="chkbase">
             <label for="chkbase">Base Set</label>
@@ -86,12 +86,20 @@
         </fieldset>
     </form>
     <div>
+        <div>Random Draft <br>
+            <label for="numberofplayers">Number of Players</label>
+
+            <form action="">
+                <input type="number" placeholder="enter number of players">
+            </form>
+        </div>
         <button id="random">Random</button>
     </div>
 
     <script src="test.js"></script>
     <script src="sets.js"></script>
-
+    <script src="faction-list-creator.js"></script>
+    <script src="deck-randomizer.js"></script>
 
     
 </body>
