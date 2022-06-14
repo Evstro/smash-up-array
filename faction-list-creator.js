@@ -1,5 +1,3 @@
-const setBox = document.getElementById('setbox');
-
 let factions = [];
 
 class FactionsAvailable {
@@ -27,17 +25,34 @@ createFactionList.addEventListener('click', e => {
             };
         };
     console.log(factions);
+    // const availableFactions = factions.filter((item) => item!=='Aliens');
+    // console.log(availableFactions);
 //this function will replace the set selection box if
 //more than two factions are in the faction array
     if(factions.length > 2) {
         setBox.remove();
+        factionList.style.display = 'block'
         factions.forEach((item) => {
             let li = document.createElement('li');
             li.innerText = item;
             factionList.appendChild(li);
         });
     } else {
-        console.log('Please select more sets');
+        alert('Please select more sets');
     };
 });
 
+//function to give the user an option to refresh the page to select new sets
+const setBox = document.getElementById('setbox');
+function refreshPage(){
+    window.location.reload();
+}
+
+//function to allow user to select all sets
+function toggle(source) {
+    var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    for (var i = 0; i < checkboxes.length; i++) {
+        if (checkboxes[i] != source)
+            checkboxes[i].checked = source.checked;
+    }
+}

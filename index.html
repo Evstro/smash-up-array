@@ -4,11 +4,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <ul id="factionlist"></ul>
+    <p>
+        <img src="SU-Logo.png" alt="">
+    </p>
+    
+    <ul id="factionlist">
+        <button type="submit" onClick="refreshPage()">Create New List</button>
+    </ul>
     <form id="setbox">
-        <fieldset>
+        <fieldset id="factionchklist">
+            <input type="checkbox" onclick="toggle(this);" />Check all?<br />
             <input type="checkbox" name="chk-base" id="chkbase">
             <label for="chkbase">Base Set</label>
             <br>
@@ -79,9 +87,7 @@
             <input type="checkbox" name="chk-dis" id="chkdis">
             <label for="chkdis">Disney</label>
             <br>
-            <input type="checkbox" name="chk" id="chk-">
-            <label for="chk"></label>
-            <br>
+
             <button class="create-list" id="createfactionlist">Create Faction List</button>
         </fieldset>
     </form>
