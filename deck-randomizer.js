@@ -1,55 +1,19 @@
-//event listener to run functions to get two random factions
+//variables for event listeners
 const twoPlayers = document.getElementById('2players');
 const threePlayers = document.getElementById('3players');
 const fourPlayers = document.getElementById('4players');
 
-// const availableFactions = factions.filter((item) => item!=='factionOnePlayerOne');
-// randomButton.addEventListener('click', e => {
-//     e.preventDefault;
-//     if(factions.length === 0) {
-//         console.log('Please create faction list first')
-//     } else {
-//     randomFactionOne();
-//     console.log(`Your first faction is ${factionOne}!`)
-//     randomFactionTwo();
-//     if(factionOne === factionTwo) {
-//         randomFactionTwo();
-//         console.log('rerolling second faction');
-//         console.log(`Your second faction is ${factionTwo}!`)
-//     } else {
-//         console.log(`Your second faction is ${factionTwo}!`)
-//     }
-//     };
- 
-// });
-
-//functions to generate two random factions
-const randomFactionOne = () => {
-    randomFaction = Math.floor(Math.random() * factions.length);
-    factionOne = factions[randomFaction];
-    
-    return factionOne;
-}
-
-const randomFactionTwo = () => {
-    randomFaction = Math.floor(Math.random() * factions.length);
-    factionTwo = factions[randomFaction];
-    
-    return factionTwo;
-}
-
-//function to randomize decks for X amount of players
-// const numOfPlayers = document.getElementById('numberofplayers');
-// const randomFactions = () => {
-//     for(let i = 0; i < numOfPlayers; i++) {
-//         console.log('success', i);
-//     }
-// };
-
-//functions to generate random factions for three players
-
+//functions to generate random factions for two players
 twoPlayers.addEventListener('click', e => {
     e.preventDefault;
+    //function to choose an available 1st faction for player one
+    const randomFactionOnePlayerOne = () => {
+        randomFaction = Math.floor(Math.random() * factions.length);
+        factionOnePlayerOne = factions[randomFaction];
+        
+        return factionOnePlayerOne;
+    };
+
     //return 1st random faction for player one
     randomFactionOnePlayerOne();
     console.log(factions);
@@ -106,44 +70,19 @@ twoPlayers.addEventListener('click', e => {
     //remove player two's 2nd faction
     const availableFactionsP2F2 = availableFactionsP2F1.filter((item) => item!==factionTwoPlayerTwo);
     console.log(availableFactionsP2F2);
-
-
-
-
-
-
-
-    // if(factionOnePlayerOne === factionTwoPlayerOne) {
-    //     console.log('rerolling faction two');
-    //     randomFactionTwoPlayerOne();
-    //     console.log(`Your second faction is ${factionTwoPlayerOne}!`)
-    // } else {
-    //     console.log(`Your second faction is ${factionTwoPlayerOne}!`)
-    // }
-    // randomFactionsPlayerOne();
-    // randomFactionsPlayerTwo();
-//     if(factions.length === 0) {
-//         console.log('Please create faction list first')
-//     } else {
-//     randomFactionOnePlayerOne();
-//     console.log(`Your first faction is ${factionOnePlayerOne}!`)
-//     randomFactionTwoPlayerOne();
-//     if(factionOnePlayerOne === factionTwoPlayerOne) {
-//         randomFactionTwoPlayerOne();
-//         console.log('rerolling second faction');
-//         console.log(`Your second faction is ${factionTwoPlayerOne}!`)
-//     } else {
-//         console.log(`Your second faction is ${factionTwoPlayerOne}!`)
-//     }
-    // };
- 
 });
 
 //functions to generate random factions for three players
-
 threePlayers.addEventListener('click', e => {
     e.preventDefault;
+    //function to choose an available 1st faction for player one
     //return 1st random faction for player one
+    const randomFactionOnePlayerOne = () => {
+        randomFaction = Math.floor(Math.random() * factions.length);
+        factionOnePlayerOne = factions[randomFaction];
+        
+        return factionOnePlayerOne;
+    };
     randomFactionOnePlayerOne();
     console.log(factions);
     console.log(`Player One's first faction is ${factionOnePlayerOne}!`);
@@ -231,41 +170,18 @@ threePlayers.addEventListener('click', e => {
     //remove player three's 2nd faction
     const availableFactionsP3F2 = availableFactionsP3F1.filter((item) => item!==factionTwoPlayerThree);
     console.log(availableFactionsP3F2);
-
-
-
-
-
-
-    // if(factionOnePlayerOne === factionTwoPlayerOne) {
-    //     console.log('rerolling faction two');
-    //     randomFactionTwoPlayerOne();
-    //     console.log(`Your second faction is ${factionTwoPlayerOne}!`)
-    // } else {
-    //     console.log(`Your second faction is ${factionTwoPlayerOne}!`)
-    // }
-    // randomFactionsPlayerOne();
-    // randomFactionsPlayerTwo();
-//     if(factions.length === 0) {
-//         console.log('Please create faction list first')
-//     } else {
-//     randomFactionOnePlayerOne();
-//     console.log(`Your first faction is ${factionOnePlayerOne}!`)
-//     randomFactionTwoPlayerOne();
-//     if(factionOnePlayerOne === factionTwoPlayerOne) {
-//         randomFactionTwoPlayerOne();
-//         console.log('rerolling second faction');
-//         console.log(`Your second faction is ${factionTwoPlayerOne}!`)
-//     } else {
-//         console.log(`Your second faction is ${factionTwoPlayerOne}!`)
-//     }
-    // };
- 
 });
 
 //functions to generate random factions for four players
 fourPlayers.addEventListener('click', e => {
     e.preventDefault;
+    //function to choose an available 1st faction for player one
+    const randomFactionOnePlayerOne = () => {
+        randomFaction = Math.floor(Math.random() * factions.length);
+        factionOnePlayerOne = factions[randomFaction];
+        
+        return factionOnePlayerOne;
+    };
     //return 1st random faction for player one
     randomFactionOnePlayerOne();
     console.log(factions);
@@ -386,101 +302,12 @@ fourPlayers.addEventListener('click', e => {
     //remove player fours's 2nd faction
     const availableFactionsP4F2 = availableFactionsP4F1.filter((item) => item!==factionTwoPlayerFour);
     console.log(availableFactionsP4F2);
-
-
-    // if(factionOnePlayerOne === factionTwoPlayerOne) {
-    //     console.log('rerolling faction two');
-    //     randomFactionTwoPlayerOne();
-    //     console.log(`Your second faction is ${factionTwoPlayerOne}!`)
-    // } else {
-    //     console.log(`Your second faction is ${factionTwoPlayerOne}!`)
-    // }
-    // randomFactionsPlayerOne();
-    // randomFactionsPlayerTwo();
-//     if(factions.length === 0) {
-//         console.log('Please create faction list first')
-//     } else {
-//     randomFactionOnePlayerOne();
-//     console.log(`Your first faction is ${factionOnePlayerOne}!`)
-//     randomFactionTwoPlayerOne();
-//     if(factionOnePlayerOne === factionTwoPlayerOne) {
-//         randomFactionTwoPlayerOne();
-//         console.log('rerolling second faction');
-//         console.log(`Your second faction is ${factionTwoPlayerOne}!`)
-//     } else {
-//         console.log(`Your second faction is ${factionTwoPlayerOne}!`)
-//     }
-    // };
- 
 });
 
 // functions to choose 2 random factions for player one
-const randomFactionOnePlayerOne = () => {
-    randomFaction = Math.floor(Math.random() * factions.length);
-    factionOnePlayerOne = factions[randomFaction];
-    
-    return factionOnePlayerOne;
-};
-
-// const randomFactionTwoPlayerOne = () => {
+// const randomFactionOnePlayerOne = () => {
 //     randomFaction = Math.floor(Math.random() * factions.length);
-//     factionTwoPlayerOne = availableFactionsP1F1[randomFaction];
+//     factionOnePlayerOne = factions[randomFaction];
     
-//     return factionTwoPlayerOne;
-// }
-
-const randomFactionsPlayerOne = () => {
-    if(factions.length === 0) {
-        console.log('Please create faction list first')
-    } else {
-        randomFactionOnePlayerOne();
-        console.log(`Player One's first faction is ${factionOnePlayerOne}!`)
-        randomFactionTwoPlayerOne();
-        if(factionOnePlayerOne === factionTwoPlayerOne) {
-            randomFactionTwoPlayerOne();
-            console.log('rerolling second faction');
-            console.log(`Player One's second faction is ${factionTwoPlayerOne}!`)
-        } else {
-            console.log(`Player One's second faction is ${factionTwoPlayerOne}!`)
-        }
-        };
-};
-
-
-//functions to choose 2 random factions for player two
-const randomFactionOnePlayerTwo = () => {
-    randomFaction = Math.floor(Math.random() * factions.length);
-    factionOnePlayerTwo = factions[randomFaction];
-    
-    return factionOnePlayerTwo;
-};
-
-const randomFactionTwoPlayerTwo = () => {
-    randomFaction = Math.floor(Math.random() * factions.length);
-    factionTwoPlayerTwo = factions[randomFaction];
-    
-    return factionTwoPlayerTwo;
-}
-
-const randomFactionsPlayerTwo = () => {
-    randomFactionOnePlayerTwo();
-    if(factionOnePlayerTwo === factionOnePlayerOne || factionTwoPlayerOne) {
-        console.log('rerolling first faction');    
-        console.log(`Player Two's first faction is ${factionOnePlayerTwo}!`);
-        randomFactionOnePlayerTwo();
-    } else {
-        console.log(`Player Two's first faction is ${factionOnePlayerTwo}!`)
-    } 
-};
-    
-    
-    
-//     (factionTwoPlayerTwo === factionOnePlayerTwo || factionOnePlayerOne || factionTwoPlayerOne) {
-//         randomFactionTwoPlayerTwo();
-//         console.log('rerolling second faction');
-//         console.log(`Player Two's second faction is ${factionTwoPlayerTwo}!`)
-//     } else {
-//         console.log(`Player Two's second faction is ${factionTwoPlayerTwo}!`)
-//     }
-//     };
+//     return factionOnePlayerOne;
 // };
