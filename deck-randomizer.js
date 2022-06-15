@@ -106,6 +106,69 @@ randomButton.addEventListener('click', e => {
     const availableFactionsP2F2 = availableFactionsP2F1.filter((item) => item!==factionTwoPlayerTwo);
     console.log(availableFactionsP2F2);
 
+    //function to choose an available 1st faction for player three
+    const randomFactionOnePlayerThree = () => {
+        randomFaction = Math.floor(Math.random() * availableFactionsP2F2.length);
+        factionOnePlayerThree = availableFactionsP2F2[randomFaction];
+        
+        return factionOnePlayerThree;
+    };
+    
+    //return 1st random faction for player three
+    randomFactionOnePlayerThree();
+    console.log(`Player Three's 1st faction is ${factionOnePlayerThree}!`);
+    
+    //remove player three's 1st faction
+    const availableFactionsP3F1 = availableFactionsP2F2.filter((item) => item!==factionOnePlayerThree);
+    console.log(availableFactionsP3F1);
+
+    //function to choose an available 2nd faction for player two
+    const randomFactionTwoPlayerThree = () => {
+        randomFaction = Math.floor(Math.random() * availableFactionsP3F1.length);
+        factionTwoPlayerThree = availableFactionsP3F1[randomFaction];
+        
+        return factionTwoPlayerThree;
+    };
+    
+    //return 2nd random faction for player three
+    randomFactionTwoPlayerThree();
+    console.log(`Player Three's 2nd faction is ${factionTwoPlayerThree}!`);
+    
+    //remove player three's 2nd faction
+    const availableFactionsP3F2 = availableFactionsP3F1.filter((item) => item!==factionTwoPlayerThree);
+    console.log(availableFactionsP3F2);
+
+    //function to choose an available 1st faction for player four
+    const randomFactionOnePlayerFour = () => {
+        randomFaction = Math.floor(Math.random() * availableFactionsP3F2.length);
+        factionOnePlayerFour = availableFactionsP3F2[randomFaction];
+        
+        return factionOnePlayerFour;
+    };
+    
+    //return 1st random faction for player four
+    randomFactionOnePlayerFour();
+    console.log(`Player Four's 1st faction is ${factionOnePlayerFour}!`);
+    
+    //remove player four's 1st faction
+    const availableFactionsP4F1 = availableFactionsP3F2.filter((item) => item!==factionOnePlayerFour);
+    console.log(availableFactionsP4F1);
+
+    //function to choose an available 2nd faction for player four
+    const randomFactionTwoPlayerFour = () => {
+        randomFaction = Math.floor(Math.random() * availableFactionsP4F1.length);
+        factionTwoPlayerFour = availableFactionsP4F1[randomFaction];
+        
+        return factionTwoPlayerFour;
+    };
+    
+    //return 2nd random faction for player four
+    randomFactionTwoPlayerFour();
+    console.log(`Player Four's 2nd faction is ${factionTwoPlayerFour}!`);
+    
+    //remove player fours's 2nd faction
+    const availableFactionsP4F2 = availableFactionsP4F1.filter((item) => item!==factionTwoPlayerFour);
+    console.log(availableFactionsP4F2);
 
 
     // if(factionOnePlayerOne === factionTwoPlayerOne) {
