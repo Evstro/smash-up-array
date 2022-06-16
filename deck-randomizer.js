@@ -3,6 +3,18 @@ const twoPlayers = document.getElementById('2players');
 const threePlayers = document.getElementById('3players');
 const fourPlayers = document.getElementById('4players');
 
+//variable and function to remove list of available factions and
+//replace with a list of chosen factions for each player
+const draft = document.getElementById('draft');
+
+const draftResults = document.getElementById('results');
+
+// const p1Draft = document.getElementById('p1');
+// const p1f1 = document.createElement('li');
+// p1f1.textContent = `${factionOnePlayerOne}`;
+// p1Draft.append(p1f1);
+
+
 //functions to generate random factions for two players
 twoPlayers.addEventListener('click', e => {
     e.preventDefault;
@@ -18,6 +30,7 @@ twoPlayers.addEventListener('click', e => {
     randomFactionOnePlayerOne();
     console.log(factions);
     console.log(`Player One's first faction is ${factionOnePlayerOne}!`);
+    
 
     //remove player one's first faction    
     const availableFactionsP1F1 = factions.filter((item) => item!==factionOnePlayerOne);
@@ -34,6 +47,17 @@ twoPlayers.addEventListener('click', e => {
     //return 2nd random faction for player one
     randomFactionTwoPlayerOne();
     console.log(`Player One's second faction is ${factionTwoPlayerOne}!`);
+
+
+    //append factions for player one to html
+    const p1Draft = document.getElementById('p1');
+    const p1f1 = document.createElement('li');
+    p1f1.textContent = `${factionOnePlayerOne}`;
+    p1Draft.append(p1f1);
+
+    const p1f2 = document.createElement('li');
+    p1f2.textContent = `${factionTwoPlayerOne}`;
+    p1Draft.append(p1f2);
 
     //remove player one's 2nd faction
     const availableFactionsP1F2 = availableFactionsP1F1.filter((item) => item!==factionTwoPlayerOne);
@@ -66,6 +90,17 @@ twoPlayers.addEventListener('click', e => {
     //return 2nd random faction for player two
     randomFactionTwoPlayerTwo();
     console.log(`Player Two's 2nd faction is ${factionTwoPlayerTwo}!`);
+
+        //append factions for player one to html
+        const p2Draft = document.getElementById('p2');
+        const p2f1 = document.createElement('li');
+        p2f1.textContent = `${factionOnePlayerTwo}`;
+        p2Draft.append(p2f1);
+    
+        const p2f2 = document.createElement('li');
+        p2f2.textContent = `${factionTwoPlayerTwo}`;
+        p2Draft.append(p2f2);
+    
     
     //remove player two's 2nd faction
     const availableFactionsP2F2 = availableFactionsP2F1.filter((item) => item!==factionTwoPlayerTwo);
