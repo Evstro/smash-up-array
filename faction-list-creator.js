@@ -13,6 +13,7 @@ class FactionsAvailable {
 //event listener and function to create a list of factions based on sets
 const factionList = document.getElementById('factionlist');
 const createFactionList = document.getElementById('createfactionlist');
+const draftBox = document.getElementById('draft');
 createFactionList.addEventListener('click', e => {
     e.preventDefault();
     factions = [];
@@ -25,6 +26,9 @@ createFactionList.addEventListener('click', e => {
             };
         };
     console.log(factions);
+        //function to display draft buttons
+
+        draftBox.style.display ='block';
     // const availableFactions = factions.filter((item) => item!=='Aliens');
     // console.log(availableFactions);
 //this function will replace the set selection box if
@@ -40,13 +44,15 @@ createFactionList.addEventListener('click', e => {
     } else {
         alert('Please select more sets');
     };
+
+
 });
 
 //function to give the user an option to refresh the page to select new sets
 const setBox = document.getElementById('setbox');
 function refreshPage(){
     window.location.reload();
-}
+};
 
 //function to allow user to select all sets
 function toggle(source) {
@@ -55,4 +61,5 @@ function toggle(source) {
         if (checkboxes[i] != source)
             checkboxes[i].checked = source.checked;
     }
-}
+};
+
