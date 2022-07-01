@@ -10,9 +10,29 @@
     <p>
         <img src="SU-Logo.png" alt="">
     </p>
-    
+
+    <div id="maxnumberplayersbox">Select Maximum Number of Players
+        <form name="maxplayersform">
+            <label>
+              2
+              <input type="radio" value="2" name="maxplayers" id="2">
+            </label>
+            <label>
+              3
+              <input type="radio" value="3" name="maxplayers" id="3">
+            </label>
+            <label>
+              4
+              <input type="radio" value="4" name="maxplayers" id="4">
+            </label>
+        </form>
+
+        <button id="submitmaxnumofplayers">Submit</button>
+    </div>
+
 
     <div id="draft">Click on number of players to run draft
+        <br>
         <button id="2players">2</button>
         <button id="3players">3</button>
         <button id="4players">4</button>
@@ -130,6 +150,8 @@
 
     <script src="test.js"></script>
     <script src="sets.js"></script>
+
+    <script src="maximum-number-of-players.js"></script>    
     <script src="faction-list-creator.js"></script>
     <script src="deck-randomizer.js"></script>
 
