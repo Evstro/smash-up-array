@@ -35,7 +35,7 @@ createFactionList.addEventListener('click', e => {
 //more than two factions are in the faction array
     if(factions.length > 2) {
         setBox.remove();
-        factionList.style.display = 'block'
+        factionList.style.display = 'block';
         factions.forEach((item) => {
             let li = document.createElement('li');
             li.innerText = item;
