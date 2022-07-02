@@ -7,6 +7,7 @@ submitMaxNumPlayers.addEventListener('click' , e => {
     const checked = maxPlayersForm.querySelector('input[name=maxplayers]:checked');
     maxNumberPlayersBox.style.display = 'none';
     setBox.style.display = 'block';
-
-    return checked.value;
+    maxPlayers = checked.value;
+    console.log(maxPlayers);
+    return maxPlayers;
 });

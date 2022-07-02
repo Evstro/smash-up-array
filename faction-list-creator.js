@@ -14,8 +14,11 @@ class FactionsAvailable {
 const factionList = document.getElementById('factionlist');
 const createFactionList = document.getElementById('createfactionlist');
 const draftBox = document.getElementById('draft');
+
 createFactionList.addEventListener('click', e => {
     e.preventDefault();
+    const maxNumPlayers = maxPlayers;
+    console.log(maxNumPlayers);
     factions = [];
     var setsChecks = document.querySelectorAll('input[type="checkbox"]');
     for (let i = 0; i < setsChecks.length; i++) {
@@ -28,21 +31,24 @@ createFactionList.addEventListener('click', e => {
     console.log(factions);
         //function to display draft buttons
 
-        draftBox.style.display ='block';
+        ;
     // const availableFactions = factions.filter((item) => item!=='Aliens');
     // console.log(availableFactions);
 //this function will replace the set selection box if
 //more than two factions are in the faction array
-    if(factions.length > 2) {
+    if(factions.length < maxPlayers * 2) {
+        alert('Please select more sets');
+    } else if(factions.length >= maxPlayers * 2) {
         setBox.remove();
+        draftBox.style.display ='block'
         factionList.style.display = 'block';
         factions.forEach((item) => {
             let li = document.createElement('li');
             li.innerText = item;
             factionList.appendChild(li);
         });
-    } else {
-        alert('Please select more sets');
+
+        
     };
 
 
