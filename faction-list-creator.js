@@ -15,10 +15,17 @@ const factionList = document.getElementById('factionlist');
 const createFactionList = document.getElementById('createfactionlist');
 const draftBox = document.getElementById('draft');
 
+const twoPlayer = document.getElementById('twoplayers');
+const threePlayer = document.getElementById('threeplayers');
+const fourPlayer = document.getElementById('fourplayers');
+
 createFactionList.addEventListener('click', e => {
     e.preventDefault();
-    const maxNumPlayers = maxPlayers;
+    //variable to convert string maxPlayers to a 
+    //number variable called maxNumPlayers
+    const maxNumPlayers = Number(maxPlayers);
     console.log(maxNumPlayers);
+
     factions = [];
     var setsChecks = document.querySelectorAll('input[type="checkbox"]');
     for (let i = 0; i < setsChecks.length; i++) {
@@ -29,17 +36,14 @@ createFactionList.addEventListener('click', e => {
             };
         };
     console.log(factions);
-        //function to display draft buttons
-
-        ;
-    // const availableFactions = factions.filter((item) => item!=='Aliens');
-    // console.log(availableFactions);
+        
 //this function will replace the set selection box if
 //more than two factions are in the faction array
     if(factions.length < maxPlayers * 2) {
         alert('Please select more sets');
     } else if(factions.length >= maxPlayers * 2) {
         setBox.remove();
+        //function to display draft buttons
         draftBox.style.display ='block'
         factionList.style.display = 'block';
         factions.forEach((item) => {
@@ -50,6 +54,28 @@ createFactionList.addEventListener('click', e => {
 
         
     };
+
+    // functions to only display the max amount of players
+    const twoPlayerDis = () => {
+    threePlayers.style.display = 'none';
+    fourPlayers.style.display = 'none';
+    console.log('two players')
+    };
+
+    const threePlayerDis = () => {
+        fourPlayers.style.display = 'none';
+        console.log('three players')
+        };
+
+
+    // if statements to run functions based on the max amount of players
+    if(maxNumPlayers === 2) {
+        twoPlayerDis();
+    } else if(maxNumPlayers === 3) {
+        threePlayerDis();
+    } else if (maxNumPlayers === 4) {
+        console.log('four players')
+    }
 
 
 });

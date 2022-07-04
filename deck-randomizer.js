@@ -1,7 +1,7 @@
 //variables for event listeners
-const twoPlayers = document.getElementById('2players');
-const threePlayers = document.getElementById('3players');
-const fourPlayers = document.getElementById('4players');
+const twoPlayers = document.getElementById('twoplayers');
+const threePlayers = document.getElementById('threeplayers');
+const fourPlayers = document.getElementById('fourplayers');
 
 //variable and function to remove list of available factions and
 //replace with a list of chosen factions for each player
