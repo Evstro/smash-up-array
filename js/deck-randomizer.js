@@ -133,8 +133,9 @@ twoPlayers.addEventListener('click', e => {
         p2Draft.append(p2f2);
 
     //function to make player faction results viewable
-    playerOneList.style.display = 'block';
-    playerTwoList.style.display = 'block';
+    if(draftResults.classList.contains('d-none')){
+        draftResults.classList.remove('d-none');
+    };
 
     //function to make extra player faction results display none
     playerThreeList.style.display = 'none';
@@ -310,9 +311,9 @@ threePlayers.addEventListener('click', e => {
             p3Draft.append(p3f2);
 
     //function to make player faction results viewable
-    playerOneList.style.display = 'block';
-    playerTwoList.style.display = 'block';
-    playerThreeList.style.display = 'block';
+    if(draftResults.classList.contains('d-none')){
+        draftResults.classList.remove('d-none');
+    };
 
     //function to make extra player faction results display none
     playerFourList.style.display = 'none';
@@ -541,10 +542,10 @@ fourPlayers.addEventListener('click', e => {
             p4Draft.append(p4f2);
 
     //function to make player faction results viewable
-    playerOneList.style.display = 'block';
-    playerTwoList.style.display = 'block';
-    playerThreeList.style.display = 'block';
-    playerFourList.style.display = 'block';
+    if(draftResults.classList.contains('d-none')){
+        draftResults.classList.remove('d-none');
+    };
+
     
     //function to make faction list have a display of none
     factionList.style.display = 'none';

@@ -4,157 +4,162 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Smash Up Deck Builder</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-    <p>
-        <img src="SU-Logo.png" alt="">
-    </p>
+<div>
 
-    <div id="maxnumberplayersbox">Select Maximum Number of Players
-        <form name="maxplayersform">
-            <label>
-              2
-              <input type="radio" value="2" name="maxplayers" id="2">
-            </label>
-            <label>
-              3
-              <input type="radio" value="3" name="maxplayers" id="3">
-            </label>
-            <label>
-              4
-              <input type="radio" value="4" name="maxplayers" id="4">
-            </label>
+    <div class="container my-5 mx-auto">
+        <p>
+            <img src="SU-Logo.png" alt="">
+        </p>
+
+        <div id="maxnumberplayersbox" class="rounded-5 p-3 my-3">Select Maximum Number of Players
+            <form name="maxplayersform">
+                <label>
+                2
+                <input type="radio" value="2" name="maxplayers" id="2">
+                </label>
+                <label>
+                3
+                <input type="radio" value="3" name="maxplayers" id="3">
+                </label>
+                <label>
+                4
+                <input type="radio" value="4" name="maxplayers" id="4">
+                </label>
+            </form>
+
+            <button id="submitmaxnumofplayers">Submit</button>
+        </div>
+
+        <form id="setbox" class="rounded-5 p-3 my-3 d-none">
+            <fieldset id="factionchklist">
+                <input type="checkbox" onclick="toggle(this);" />Check all?<br />
+                <input type="checkbox" name="chk-base" id="chkbase">
+                <label for="chkbase">Base Set</label>
+                <br>
+                <input type="checkbox" name="chk-al9000" id="chkal9000">
+                <label for="chkal9000">Awesome Level 9000</label>
+                <br>
+                <input type="checkbox" name="chk-cthulhu" id="chkcthulhu">
+                <label for="chkcthulhu">Obligatory Cthulhu Set
+                </label>
+                <br>
+                <input type="checkbox" name="chk-scifidbl" id="chkscifidbl">
+                <label for="chkscifidbl">Science Fiction Double Feature</label>
+                <br>
+                <input type="checkbox" name="chk-monster" id="chkmonster">
+                <label for="chkmonster">Monster Smash</label>
+                <br>
+                <input type="checkbox" name="chk-pretty" id="chkpretty">
+                <label for="chkpretty">Pretty Pretty</label>
+                <br>
+                <input type="checkbox" name="chk-urfault" id="chkurfault">
+                <label for="chkurfault">It's Your Fault!</label>
+                <br>
+                <input type="checkbox" name="chk-cease" id="chkcease">
+                <label for="chkcease">Cease and Desist</label>
+                <br>
+                <input type="checkbox" name="chk-thinking" id="chkthinking">
+                <label for="chkthinking">What Were We Thinking?</label>
+                <br>
+                <input type="checkbox" name="chk-japan" id="chkjapan">
+                <label for="chkjapan">Big in Japan</label>
+                <br>
+                <input type="checkbox" name="chk-seventies" id="chkseventies">
+                <label for="chkseventies">That 70's Expansion</label>
+                <br>
+                <input type="checkbox" name="chk-oops" id="chkoops">
+                <label for="chkoops">Oops! You Did It Again!</label>
+                <br>
+                <input type="checkbox" name="chk-wtint" id="chkwtint">
+                <label for="chkwtint">World Tour: International Incident</label>
+                <br>
+                <input type="checkbox" name="chk-wtshock" id="chkwtshock">
+                <label for="chkwtshock">World Tour: Culture Shock</label>
+                <br>
+                <input type="checkbox" name="chk-geeks" id="chkgeeks">
+                <label for="chkgeeks">Geeks</label>
+                <br>
+                <input type="checkbox" name="chk-allstars" id="chkallstars">
+                <label for="chkallstars">All-Stars</label>
+                <br>
+                <input type="checkbox" name="chk-sheep" id="chksheep">
+                <label for="chksheep">Sheep</label>
+                <br>
+                <input type="checkbox" name="chk-penguins" id="chkpenguins">
+                <label for="chkpenguins">Penguins</label>
+                <br>
+                <input type="checkbox" name="chk-goblins" id="chkgoblins">
+                <label for="chkgoblins">Goblins</label>
+                <br>
+                <input type="checkbox" name="chk-knights" id="chkknights">
+                <label for="chkknights">Knights of the Round Table</label>
+                <br>
+                <input type="checkbox" name="chk-munch" id="chkmunch">
+                <label for="chkmunch">Munchkin</label>
+                <br>
+                <input type="checkbox" name="chk-marvel" id="chkmarvel">
+                <label for="chkmarvel">Marvel</label>
+                <br>
+                <input type="checkbox" name="chk-dis" id="chkdis">
+                <label for="chkdis">Disney</label>
+                <br>
+
+                <button class="create-list" id="createfactionlist">Create Faction List</button>
+            </fieldset>
         </form>
 
-        <button id="submitmaxnumofplayers">Submit</button>
+
+        <div id="draft" class="rounded-5 p-3 my-3 d-none">Click on number of players to run draft
+            <br>
+            <button id="twoplayers">2</button>
+            <button id="threeplayers">3</button>
+            <button id="fourplayers">4</button>
+            <button type="submit" onClick="refreshPage()">Create New List</button>
+        </div>
+            
+        <ul id="factionlist" class="rounded-5 p-3 my-3 d-none">
+            
+        </ul>
+
+        <div id="results" class="rounded-5 p-3 my-3 d-none">
+            <ul id="p1">
+                <p1 class="playerhead">Player 1</p1>
+                <li id="p1f1">fill</li>
+                <li id="p1f2">fill</li>
+                </ul>
+            <ul id="p2">
+                <p1 class="playerhead">Player 2</p1>
+                <li id="p2f1">fill</li>
+                <li id="p2f2">fill</li>
+                </ul>
+            <ul id="p3">
+                <p1 class="playerhead">Player 3</p1>
+                <li id="p3f1">fill</li>
+                <li id="p3f2">fill</li>
+                </ul>
+            <ul id="p4">
+                <p1 class="playerhead">Player 4</p1>
+                <li id="p4f1">fill</li>
+                <li id="p4f2">fill</li>
+                </ul>
+        </div>
+
+
+
+
+
+
+
+        <script src="js/test.js"></script>
+        <script src="js/sets.js"></script>
+
+        <script src="js/maximum-number-of-players.js"></script>    
+        <script src="js/faction-list-creator.js"></script>
+        <script src="js/deck-randomizer.js"></script>
+
     </div>
-
-
-    <div id="draft">Click on number of players to run draft
-        <br>
-        <button id="twoplayers">2</button>
-        <button id="threeplayers">3</button>
-        <button id="fourplayers">4</button>
-        <button type="submit" onClick="refreshPage()">Create New List</button>
-    </div>
-        
-    </div>
-
-    <div id="results">
-        <ul id="p1">
-            <p1 class="playerhead">Player 1</p1>
-            <li id="p1f1">fill</li>
-            <li id="p1f2">fill</li>
-            </ul>
-        <ul id="p2">
-            <p1 class="playerhead">Player 2</p1>
-            <li id="p2f1">fill</li>
-            <li id="p2f2">fill</li>
-            </ul>
-        <ul id="p3">
-            <p1 class="playerhead">Player 3</p1>
-            <li id="p3f1">fill</li>
-            <li id="p3f2">fill</li>
-            </ul>
-        <ul id="p4">
-            <p1 class="playerhead">Player 4</p1>
-            <li id="p4f1">fill</li>
-            <li id="p4f2">fill</li>
-            </ul>
-    </div>
-
-    <ul id="factionlist">
-        
-    </ul>
-    <form id="setbox">
-        <fieldset id="factionchklist">
-            <input type="checkbox" onclick="toggle(this);" />Check all?<br />
-            <input type="checkbox" name="chk-base" id="chkbase">
-            <label for="chkbase">Base Set</label>
-            <br>
-            <input type="checkbox" name="chk-al9000" id="chkal9000">
-            <label for="chkal9000">Awesome Level 9000</label>
-            <br>
-            <input type="checkbox" name="chk-cthulhu" id="chkcthulhu">
-            <label for="chkcthulhu">Obligatory Cthulhu Set
-            </label>
-            <br>
-            <input type="checkbox" name="chk-scifidbl" id="chkscifidbl">
-            <label for="chkscifidbl">Science Fiction Double Feature</label>
-            <br>
-            <input type="checkbox" name="chk-monster" id="chkmonster">
-            <label for="chkmonster">Monster Smash</label>
-            <br>
-            <input type="checkbox" name="chk-pretty" id="chkpretty">
-            <label for="chkpretty">Pretty Pretty</label>
-            <br>
-            <input type="checkbox" name="chk-urfault" id="chkurfault">
-            <label for="chkurfault">It's Your Fault!</label>
-            <br>
-            <input type="checkbox" name="chk-cease" id="chkcease">
-            <label for="chkcease">Cease and Desist</label>
-            <br>
-            <input type="checkbox" name="chk-thinking" id="chkthinking">
-            <label for="chkthinking">What Were We Thinking?</label>
-            <br>
-            <input type="checkbox" name="chk-japan" id="chkjapan">
-            <label for="chkjapan">Big in Japan</label>
-            <br>
-            <input type="checkbox" name="chk-seventies" id="chkseventies">
-            <label for="chkseventies">That 70's Expansion</label>
-            <br>
-            <input type="checkbox" name="chk-oops" id="chkoops">
-            <label for="chkoops">Oops! You Did It Again!</label>
-            <br>
-            <input type="checkbox" name="chk-wtint" id="chkwtint">
-            <label for="chkwtint">World Tour: International Incident</label>
-            <br>
-            <input type="checkbox" name="chk-wtshock" id="chkwtshock">
-            <label for="chkwtshock">World Tour: Culture Shock</label>
-            <br>
-            <input type="checkbox" name="chk-geeks" id="chkgeeks">
-            <label for="chkgeeks">Geeks</label>
-            <br>
-            <input type="checkbox" name="chk-allstars" id="chkallstars">
-            <label for="chkallstars">All-Stars</label>
-            <br>
-            <input type="checkbox" name="chk-sheep" id="chksheep">
-            <label for="chksheep">Sheep</label>
-            <br>
-            <input type="checkbox" name="chk-penguins" id="chkpenguins">
-            <label for="chkpenguins">Penguins</label>
-            <br>
-            <input type="checkbox" name="chk-goblins" id="chkgoblins">
-            <label for="chkgoblins">Goblins</label>
-            <br>
-            <input type="checkbox" name="chk-knights" id="chkknights">
-            <label for="chkknights">Knights of the Round Table</label>
-            <br>
-            <input type="checkbox" name="chk-munch" id="chkmunch">
-            <label for="chkmunch">Munchkin</label>
-            <br>
-            <input type="checkbox" name="chk-marvel" id="chkmarvel">
-            <label for="chkmarvel">Marvel</label>
-            <br>
-            <input type="checkbox" name="chk-dis" id="chkdis">
-            <label for="chkdis">Disney</label>
-            <br>
-
-            <button class="create-list" id="createfactionlist">Create Faction List</button>
-        </fieldset>
-    </form>
-
-
-
-
-    <script src="test.js"></script>
-    <script src="sets.js"></script>
-
-    <script src="maximum-number-of-players.js"></script>    
-    <script src="faction-list-creator.js"></script>
-    <script src="deck-randomizer.js"></script>
-
-    
 </body>
 </html>

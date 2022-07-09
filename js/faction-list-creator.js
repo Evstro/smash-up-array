@@ -44,8 +44,14 @@ createFactionList.addEventListener('click', e => {
     } else if(factions.length >= maxPlayers * 2) {
         setBox.remove();
         //function to display draft buttons
-        draftBox.style.display ='block'
-        factionList.style.display = 'block';
+        // draftBox.style.display ='block'
+        if(draftBox.classList.contains('d-none')){
+            draftBox.classList.remove('d-none');
+        }
+        // factionList.style.display = 'block';
+        if(factionList.classList.contains('d-none')){
+            factionList.classList.remove('d-none');
+        }
         factions.forEach((item) => {
             let li = document.createElement('li');
             li.innerText = item;

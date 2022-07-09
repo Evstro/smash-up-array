@@ -1,21 +1,27 @@
-* {
+body {
     background-color: rgba(55,106,180,255);
 
 }
 
-.playerhead {
-    display: block;
-    max-width: 900px;
-
-    color: rgba(189,214,65,255);
-    font-size: 25px;
-    font-weight: 900;
-    list-style-type: none;
+.container {
+    max-width: 400px;
 }
 
-#setbox, #p1, #p2, #p3, #p4, #draft{
+ #maxnumberplayersbox, #setbox, #draft, #factionlist, #results {
+    display: block;
+    
+    border: 5px solid rgba(189,214,65,255);
+    /* border-radius: 25px;
+    padding: 20px;
+    color: rgba(189,214,65,255);
+    font-weight: 900;
+    list-style-type: none; */
+    
+}
+
+/* #setbox, #p1, #p2, #p3, #p4, #draft{ 
     display: none;
-    max-width: 900px;
+    
     border: 5px solid rgba(189,214,65,255);
     border-radius: 25px;
     padding: 20px;
@@ -27,7 +33,7 @@
 
 #factionlist {
     display: none;
-    max-width: 900px;
+    
     border: 5px solid rgba(189,214,65,255);
     border-radius: 25px;
     padding: 20px;
@@ -37,17 +43,21 @@
     
 }
 
-#maxnumberplayersbox {
+
+.playerhead {
     display: block;
-    max-width: 900px;
-    border: 5px solid rgba(189,214,65,255);
-    border-radius: 25px;
-    padding: 20px;
+    
+
     color: rgba(189,214,65,255);
+    font-size: 25px;
     font-weight: 900;
     list-style-type: none;
-    
 }
+
+
+
+
+
 
 #factionchklist {
     display: inline;
