@@ -96,12 +96,29 @@ twoPlayers.addEventListener('click', e => {
 
     //make factions to lowercase
         //player 1
-        const f1p1Logo = factionOnePlayerOne.toLowerCase();
-        const f2p1Logo = factionTwoPlayerOne.toLowerCase();
+        const f1p1LC = factionOnePlayerOne.toLowerCase();
+        const f2p1LC = factionTwoPlayerOne.toLowerCase();
 
         //player 2
-        const f1p2Logo = factionOnePlayerTwo.toLowerCase();
-        const f2p2Logo = factionTwoPlayerTwo.toLowerCase();
+        const f1p2LC = factionOnePlayerTwo.toLowerCase();
+        const f2p2LC = factionTwoPlayerTwo.toLowerCase();
+
+    //replace spaces with "-"
+        //player 1
+        const f1p1Logo = f1p1LC.replace(/\s/g, "-")
+        .replace(/\./g, "");
+        const f2p1Logo = f2p1LC.replace(/\s/g, "-")
+        .replace(/\./g, "");
+        console.log(f1p1Logo);
+        console.log(f2p1Logo);
+
+        //player 2
+        const f1p2Logo = f1p2LC.replace(/\s/g, "-")
+        .replace(/\./g, "");
+        const f2p2Logo = f2p2LC.replace(/\s/g, "-")
+        .replace(/\./g, "");
+        console.log(f1p2Logo);
+        console.log(f2p2Logo);
 
         //get container for each player's draft results
         const p1Results = document.getElementById('p1-container');
@@ -115,7 +132,7 @@ twoPlayers.addEventListener('click', e => {
             <div class="text-center fw-bold">Player 1</div>
         </div>
     
-        <div id="p1-test" class="d-flex justify-content-center">      
+        <div id="p1" class="d-flex justify-content-center">      
             <div class="">
                 <img class="faclogo" src="img/logo/${f1p1Logo}-logo.png" alt="">
                 <div id="p1f1-test" class="text-center">${factionOnePlayerOne}</div>
@@ -264,16 +281,41 @@ threePlayers.addEventListener('click', e => {
     };
     //make factions to lowercase
         //player 1
-        const f1p1Logo = factionOnePlayerOne.toLowerCase();
-        const f2p1Logo = factionTwoPlayerOne.toLowerCase();
+        const f1p1LC = factionOnePlayerOne.toLowerCase();
+        const f2p1LC = factionTwoPlayerOne.toLowerCase();
 
         //player 2
-        const f1p2Logo = factionOnePlayerTwo.toLowerCase();
-        const f2p2Logo = factionTwoPlayerTwo.toLowerCase();
+        const f1p2LC = factionOnePlayerTwo.toLowerCase();
+        const f2p2LC = factionTwoPlayerTwo.toLowerCase();
 
         //player 3
-        const f1p3Logo = factionOnePlayerThree.toLowerCase();
-        const f2p3Logo = factionTwoPlayerThree.toLowerCase();
+        const f1p3LC = factionOnePlayerThree.toLowerCase();
+        const f2p3LC = factionTwoPlayerThree.toLowerCase();
+
+    //replace spaces with "-"
+        //player 1
+        const f1p1Logo = f1p1LC.replace(/\s/g, "-")
+        .replace(/\./g, "");
+        const f2p1Logo = f2p1LC.replace(/\s/g, "-")
+        .replace(/\./g, "");
+        console.log(f1p1Logo);
+        console.log(f2p1Logo);
+
+        //player 2
+        const f1p2Logo = f1p2LC.replace(/\s/g, "-")
+        .replace(/\./g, "");
+        const f2p2Logo = f2p2LC.replace(/\s/g, "-")
+        .replace(/\./g, "");
+        console.log(f1p2Logo);
+        console.log(f2p2Logo);
+
+        //player 3
+        const f1p3Logo = f1p3LC.replace(/\s/g, "-")
+        .replace(/\./g, "");
+        const f2p3Logo = f2p3LC.replace(/\s/g, "-")
+        .replace(/\./g, "");
+        console.log(f1p3Logo);
+        console.log(f2p3Logo);
 
         //get container for each player's draft results
         const p1Results = document.getElementById('p1-container');
@@ -287,7 +329,7 @@ threePlayers.addEventListener('click', e => {
             <div class="text-center fw-bold">Player 1</div>
         </div>
     
-        <div id="p1-test" class="d-flex justify-content-center">      
+        <div id="p1" class="d-flex justify-content-center">      
             <div class="">
                 <img class="faclogo" src="img/logo/${f1p1Logo}-logo.png" alt="">
                 <div id="p1f1-test" class="text-center">${factionOnePlayerOne}</div>
@@ -493,20 +535,53 @@ fourPlayers.addEventListener('click', e => {
 
     //make factions to lowercase
         //player 1
-        const f1p1Logo = factionOnePlayerOne.toLowerCase();
-        const f2p1Logo = factionTwoPlayerOne.toLowerCase();
+        const f1p1LC = factionOnePlayerOne.toLowerCase();
+        const f2p1LC = factionTwoPlayerOne.toLowerCase();
 
         //player 2
-        const f1p2Logo = factionOnePlayerTwo.toLowerCase();
-        const f2p2Logo = factionTwoPlayerTwo.toLowerCase();
+        const f1p2LC = factionOnePlayerTwo.toLowerCase();
+        const f2p2LC = factionTwoPlayerTwo.toLowerCase();
 
         //player 3
-        const f1p3Logo = factionOnePlayerThree.toLowerCase();
-        const f2p3Logo = factionTwoPlayerThree.toLowerCase();
+        const f1p3LC = factionOnePlayerThree.toLowerCase();
+        const f2p3LC = factionTwoPlayerThree.toLowerCase();
 
         //player 4
-        const f1p4Logo = factionOnePlayerFour.toLowerCase();
-        const f2p4Logo = factionTwoPlayerFour.toLowerCase();
+        const f1p4LC = factionOnePlayerFour.toLowerCase();
+        const f2p4LC = factionTwoPlayerFour.toLowerCase();
+
+    //replace spaces with "-"
+            //player 1
+            const f1p1Logo = f1p1LC.replace(/\s/g, "-")
+            .replace(/\./g, "");
+            const f2p1Logo = f2p1LC.replace(/\s/g, "-")
+            .replace(/\./g, "");
+            console.log(f1p1Logo);
+            console.log(f2p1Logo);
+    
+            //player 2
+            const f1p2Logo = f1p2LC.replace(/\s/g, "-")
+            .replace(/\./g, "");
+            const f2p2Logo = f2p2LC.replace(/\s/g, "-")
+            .replace(/\./g, "");
+            console.log(f1p2Logo);
+            console.log(f2p2Logo);
+    
+            //player 3
+            const f1p3Logo = f1p3LC.replace(/\s/g, "-")
+            .replace(/\./g, "");
+            const f2p3Logo = f2p3LC.replace(/\s/g, "-")
+            .replace(/\./g, "");
+            console.log(f1p3Logo);
+            console.log(f2p3Logo);
+    
+            //player 4
+            const f1p4Logo = f1p4LC.replace(/\s/g, "-")
+            .replace(/\./g, "");
+            const f2p4Logo = f2p4LC.replace(/\s/g, "-")
+            .replace(/\./g, "");
+            console.log(f1p4Logo);
+            console.log(f2p4Logo);
 
         //get container for each player's draft results
         const p1Results = document.getElementById('p1-container');
@@ -520,7 +595,7 @@ fourPlayers.addEventListener('click', e => {
             <div class="text-center fw-bold">Player 1</div>
         </div>
     
-        <div id="p1-test" class="d-flex justify-content-center">      
+        <div id="p1" class="d-flex justify-content-center">      
             <div class="">
                 <img class="faclogo" src="img/logo/${f1p1Logo}-logo.png" alt="">
                 <div id="p1f1-test" class="text-center">${factionOnePlayerOne}</div>

@@ -51,7 +51,7 @@ setFactions.set('urfault', [
     'Mythic Greeks',
     'Sharks',
     'Superheroes',
-    'Tornadoes'
+    'Tornados'
 ]);
 
 setFactions.set('cease', [
@@ -90,7 +90,7 @@ setFactions.set('oops', [
  ]);
 
 setFactions.set('wtint', [
-    'Luchadores',
+    'Luchadors',
     'Mounties',
     'Musketeers',
     'Sumo Wrestlers'
