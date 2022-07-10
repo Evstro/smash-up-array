@@ -11,7 +11,7 @@ class FactionsAvailable {
   };
 
 //event listener and function to create a list of factions based on sets
-const factionList = document.getElementById('factionlist');
+const factionList = document.getElementById('factionlistcontainer');
 const createFactionList = document.getElementById('createfactionlist');
 const draftBox = document.getElementById('draft');
 
@@ -45,15 +45,19 @@ createFactionList.addEventListener('click', e => {
         setBox.remove();
         //function to display draft buttons
         // draftBox.style.display ='block'
+        
         if(draftBox.classList.contains('d-none')){
             draftBox.classList.remove('d-none');
+            draftBox.classList.add('d-flex');
         }
         // factionList.style.display = 'block';
         if(factionList.classList.contains('d-none')){
             factionList.classList.remove('d-none');
+            factionList.classList.add('d-flex');
         }
         factions.forEach((item) => {
             let li = document.createElement('li');
+            li.classList.add('list-inline-item')
             li.innerText = item;
             factionList.appendChild(li);
         });
@@ -87,7 +91,7 @@ createFactionList.addEventListener('click', e => {
 });
 
 //function to give the user an option to refresh the page to select new sets
-const setBox = document.getElementById('setbox');
+const setBox = document.getElementById('setboxcontainer');
 function refreshPage(){
     window.location.reload();
 };

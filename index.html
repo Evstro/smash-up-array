@@ -45,7 +45,7 @@
             <button id="submitmaxnumofplayers">Submit</button>
         </div>
 
-        <div id="setboxcontainer" class="rounded-5 p-3 my-3 d-flex flex-column">
+        <div id="setboxcontainer" class="d-none rounded-5 p-3 my-3 flex-column">
 
             <div class="text-center fs-5 fw-bold">
                 Select Your Sets
@@ -141,7 +141,7 @@
             </form>
         </div>
 
-        <div id="draft" class="rounded-5 p-3 my-3 d-flex flex-column">
+        <div id="draft" class="rounded-5 p-3 my-3 d-none flex-column">
             
             <div class="text-center fs-5 fw-bold">
             Number of Players for Draft
@@ -153,27 +153,19 @@
             <button type="submit" onClick="refreshPage()">Create New List</button>
         </div>
             
-        <div id="factionlistcontainer" class="d-flex flex-column rounded-5 p-3 my-3">
+        <div id="factionlistcontainer" class="d-none flex-column rounded-5 p-3 my-3">
 
             <div class="text-center fs-5 fw-bold">
                 Faction List
             </div>
 
             <ul id="factionlist" class="list-inline list-unstyled">
-                <li class="list-inline-item" >faction</li>
-                <li class="list-inline-item" >faction</li>
-                <li class="list-inline-item" >faction</li>
-                <li class="list-inline-item" >faction</li>
-                <li class="list-inline-item" >faction</li>
-                <li class="list-inline-item" >faction</li>
-                <li class="list-inline-item" >faction</li>
-                <li class="list-inline-item" >faction</li>
+
             </ul>
         </div>
-        
 
-        <div id="resultscontainer">
-            <div id="results" class="rounded-5 p- my-3 d-flex flex-column justify-content-center">
+        <div id="" class="container resultscontainer">
+            <div id="results" class="rounded-5 p- my-3 d-none flex-column justify-content-center">
 
                 <div class="text-center fs-5 fw-bold">
                     Teams
@@ -181,73 +173,23 @@
 
                 
 
-                <div class="d-flex flex-column my-2">
-                    <div class="">
-                        <div class="text-center fw-bold">Player 1</div>
-                    </div>
-                    <div id="p1" class="d-flex justify-content-center">  
-                            
-                        <div class="">
-                            <img src="https://via.placeholder.com/110" alt="">
-                            <div id="p1f1" class="text-center">Aliens</div>
-                        </div>
-                        <div class="">
-                            <img src="https://via.placeholder.com/110" alt="">
-                            <div id="p1f2" class="text-center">Zombies</div>
-                        </div>
-                    </div>
+                <div id="p1-container" class="d-flex flex-column my-2">
+
                 </div> 
 
-                <div class="d-flex flex-column my-2">
-                    <div class="">
-                        <div class="text-center fw-bold">Player 2</div>
-                    </div>
-                    <div id="p2" class="d-flex justify-content-center">  
-                            
-                        <div class="">
-                            <img src="https://via.placeholder.com/110" alt="">
-                            <div id="p2f1" class="text-center">Aliens</div>
-                        </div>
-                        <div class="">
-                            <img src="https://via.placeholder.com/110" alt="">
-                            <div id="p2f2" class="text-center">Zombies</div>
-                        </div>
-                    </div>
+                <div id="p2-container" class="d-flex flex-column my-2">
+
                 </div> 
 
-                <div class="d-flex flex-column my-2">
-                    <div class="">
-                        <div class="text-center fw-bold">Player 3</div>
-                    </div>
-                    <div id="p3" class="d-flex justify-content-center">  
-                            
-                        <div class="">
-                            <img src="https://via.placeholder.com/110" alt="">
-                            <div id="p3f1" class="text-center">Aliens</div>
-                        </div>
-                        <div class="">
-                            <img src="https://via.placeholder.com/110" alt="">
-                            <div id="p3f2" class="text-center">Zombies</div>
-                        </div>
-                    </div>
+                <div id="p3-container" class="d-flex flex-column my-2">
+
                 </div> 
 
-                <div class="d-flex flex-column my-2">
-                    <div class="">
-                        <div class="text-center fw-bold">Player 4</div>
-                    </div>
-                    <div id="p4" class="d-flex justify-content-center">  
-                            
-                        <div class="">
-                            <img src="https://via.placeholder.com/110" alt="">
-                            <div id="p4f1" class="text-center">Aliens</div>
-                        </div>
-                        <div class="">
-                            <img src="https://via.placeholder.com/110" alt="">
-                            <div id="p4f2" class="text-center">Zombies</div>
-                        </div>
-                    </div>
+                <div id="p4-container" class="d-flex flex-column my-2">
+
                 </div> 
+
+
                 
 
                 
@@ -256,8 +198,6 @@
 
 
         </div>
-
-
 
 
 

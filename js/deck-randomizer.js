@@ -56,28 +56,6 @@ twoPlayers.addEventListener('click', e => {
     const availableFactionsP1F2 = availableFactionsP1F1.filter((item) => item!==factionTwoPlayerOne);
     console.log(availableFactionsP1F2);
 
-        //get ul for p1 draft results
-        const p1Draft = document.getElementById('p1');
-    
-        //get list items of factions p1
-        const p1f1List = document.getElementById('p1f1');
-        const p1f2List = document.getElementById('p1f2');
-    
-        //remove factions for p1
-        p1f1List.remove();
-        p1f2List.remove();
-    
-        //append factions for player one to html
-        const p1f1 = document.createElement('li');
-        p1f1.setAttribute('id','p1f1');
-        p1f1.textContent = `${factionOnePlayerOne}`;
-        p1Draft.append(p1f1);
-    
-        const p1f2 = document.createElement('li');
-        p1f2.setAttribute('id','p1f2');
-        p1f2.textContent = `${factionTwoPlayerOne}`;
-        p1Draft.append(p1f2);
-
     //function to choose an available 1st faction for player two
     const randomFactionOnePlayerTwo = () => {
         randomFaction = Math.floor(Math.random() * availableFactionsP1F2.length);
@@ -110,39 +88,74 @@ twoPlayers.addEventListener('click', e => {
     const availableFactionsP2F2 = availableFactionsP2F1.filter((item) => item!==factionTwoPlayerTwo);
     console.log(availableFactionsP2F2);
 
-        //get ul for p2 draft results
-        const p2Draft = document.getElementById('p2');
-    
-        //get list items of factions p2
-        const p2f1List = document.getElementById('p2f1');
-        const p2f2List = document.getElementById('p2f2');
-    
-        //remove factions for p2
-        p2f1List.remove();
-        p2f2List.remove();
-    
-        //append factions for p2 to html
-        const p2f1 = document.createElement('li');
-        p2f1.setAttribute('id','p2f1');
-        p2f1.textContent = `${factionOnePlayerTwo}`;
-        p2Draft.append(p2f1);
-    
-        const p2f2 = document.createElement('li');
-        p2f2.setAttribute('id','p2f2');
-        p2f2.textContent = `${factionTwoPlayerTwo}`;
-        p2Draft.append(p2f2);
-
-    //function to make player faction results viewable
+    // function to make player faction results viewable
     if(draftResults.classList.contains('d-none')){
         draftResults.classList.remove('d-none');
+        draftResults.classList.add('d-flex');
     };
 
-    //function to make extra player faction results display none
-    playerThreeList.style.display = 'none';
-    playerFourList.style.display = 'none';
+    //make factions to lowercase
+        //player 1
+        const f1p1Logo = factionOnePlayerOne.toLowerCase();
+        const f2p1Logo = factionTwoPlayerOne.toLowerCase();
+
+        //player 2
+        const f1p2Logo = factionOnePlayerTwo.toLowerCase();
+        const f2p2Logo = factionTwoPlayerTwo.toLowerCase();
+
+        //get container for each player's draft results
+        const p1Results = document.getElementById('p1-container');
+        const p2Results = document.getElementById('p2-container');
+        const p3Results = document.getElementById('p3-container');
+        const p4Results = document.getElementById('p4-container');
+
+        //add results for p1 to html
+        p1Results.innerHTML = `
+        <div class="">
+            <div class="text-center fw-bold">Player 1</div>
+        </div>
+    
+        <div id="p1-test" class="d-flex justify-content-center">      
+            <div class="">
+                <img class="faclogo" src="/img/logo/${f1p1Logo}-logo.png" alt="">
+                <div id="p1f1-test" class="text-center">${factionOnePlayerOne}</div>
+            </div>
+    
+            <div class="">
+                <img class="faclogo" src="/img/logo/${f2p1Logo}-logo.png" alt="">
+                <div id="p1f2-test" class="text-center">${factionTwoPlayerOne}</div>
+            </div>
+        </div>
+        `;
+
+        //add results for p2 to html
+        p2Results.innerHTML = `
+        <div class="">
+            <div class="text-center fw-bold">Player 2</div>
+        </div>
+    
+        <div id="p2" class="d-flex justify-content-center">      
+            <div class="">
+                <img class="faclogo" src="/img/logo/${f1p2Logo}-logo.png" alt="">
+                <div id="p2f1" class="text-center">${factionOnePlayerTwo}</div>
+            </div>
+    
+            <div class="">
+                <img class="faclogo" src="/img/logo/${f2p2Logo}-logo.png" alt="">
+                <div id="p2f2" class="text-center">${factionTwoPlayerTwo}</div>
+            </div>
+        </div>
+        `;
+
+        //clear results for p3
+        p3Results.innerHTML = '';
+
+        //clear results for p4
+        p4Results.innerHTML = '';
     
     //function to make faction list have a display of none
-    factionList.style.display = 'none';
+    factionList.classList.remove('d-flex');
+    factionList.classList.add('d-none');
 });
 
 //functions to generate random factions for three players
@@ -180,28 +193,6 @@ threePlayers.addEventListener('click', e => {
     const availableFactionsP1F2 = availableFactionsP1F1.filter((item) => item!==factionTwoPlayerOne);
     console.log(availableFactionsP1F2);
 
-        //get ul for p1 draft results
-        const p1Draft = document.getElementById('p1');
-    
-        //get list items of factions p1
-        const p1f1List = document.getElementById('p1f1');
-        const p1f2List = document.getElementById('p1f2');
-    
-        //remove factions for p1
-        p1f1List.remove();
-        p1f2List.remove();
-    
-        //append factions for player one to html
-        const p1f1 = document.createElement('li');
-        p1f1.setAttribute('id','p1f1');
-        p1f1.textContent = `${factionOnePlayerOne}`;
-        p1Draft.append(p1f1);
-    
-        const p1f2 = document.createElement('li');
-        p1f2.setAttribute('id','p1f2');
-        p1f2.textContent = `${factionTwoPlayerOne}`;
-        p1Draft.append(p1f2);
-
     //function to choose an available 1st faction for player two
     const randomFactionOnePlayerTwo = () => {
         randomFaction = Math.floor(Math.random() * availableFactionsP1F2.length);
@@ -233,28 +224,6 @@ threePlayers.addEventListener('click', e => {
     //remove player two's 2nd faction
     const availableFactionsP2F2 = availableFactionsP2F1.filter((item) => item!==factionTwoPlayerTwo);
     console.log(availableFactionsP2F2);
-
-        //get ul for p2 draft results
-        const p2Draft = document.getElementById('p2');
-    
-        //get list items of factions p2
-        const p2f1List = document.getElementById('p2f1');
-        const p2f2List = document.getElementById('p2f2');
-    
-        //remove factions for p2
-        p2f1List.remove();
-        p2f2List.remove();
-    
-        //append factions for p2 to html
-        const p2f1 = document.createElement('li');
-        p2f1.setAttribute('id','p2f1');
-        p2f1.textContent = `${factionOnePlayerTwo}`;
-        p2Draft.append(p2f1);
-    
-        const p2f2 = document.createElement('li');
-        p2f2.setAttribute('id','p2f2');
-        p2f2.textContent = `${factionTwoPlayerTwo}`;
-        p2Draft.append(p2f2);
 
     //function to choose an available 1st faction for player three
     const randomFactionOnePlayerThree = () => {
@@ -288,38 +257,96 @@ threePlayers.addEventListener('click', e => {
     const availableFactionsP3F2 = availableFactionsP3F1.filter((item) => item!==factionTwoPlayerThree);
     console.log(availableFactionsP3F2);
 
-            //get ul for p3 draft results
-            const p3Draft = document.getElementById('p3');
-    
-            //get list items of factions p2
-            const p3f1List = document.getElementById('p3f1');
-            const p3f2List = document.getElementById('p3f2');
-        
-            //remove factions for p3
-            p3f1List.remove();
-            p3f2List.remove();
-        
-            //append factions for p3 to html
-            const p3f1 = document.createElement('li');
-            p3f1.setAttribute('id','p3f1');
-            p3f1.textContent = `${factionOnePlayerThree}`;
-            p3Draft.append(p3f1);
-        
-            const p3f2 = document.createElement('li');
-            p3f2.setAttribute('id','p3f2');
-            p3f2.textContent = `${factionTwoPlayerThree}`;
-            p3Draft.append(p3f2);
-
-    //function to make player faction results viewable
+    // function to make player faction results viewable
     if(draftResults.classList.contains('d-none')){
         draftResults.classList.remove('d-none');
+        draftResults.classList.add('d-flex');
     };
+    //make factions to lowercase
+        //player 1
+        const f1p1Logo = factionOnePlayerOne.toLowerCase();
+        const f2p1Logo = factionTwoPlayerOne.toLowerCase();
+
+        //player 2
+        const f1p2Logo = factionOnePlayerTwo.toLowerCase();
+        const f2p2Logo = factionTwoPlayerTwo.toLowerCase();
+
+        //player 3
+        const f1p3Logo = factionOnePlayerThree.toLowerCase();
+        const f2p3Logo = factionTwoPlayerThree.toLowerCase();
+
+        //get container for each player's draft results
+        const p1Results = document.getElementById('p1-container');
+        const p2Results = document.getElementById('p2-container');
+        const p3Results = document.getElementById('p3-container');
+        const p4Results = document.getElementById('p4-container');
+
+        //add results for p1 to html
+        p1Results.innerHTML = `
+        <div class="">
+            <div class="text-center fw-bold">Player 1</div>
+        </div>
+    
+        <div id="p1-test" class="d-flex justify-content-center">      
+            <div class="">
+                <img class="faclogo" src="/img/logo/${f1p1Logo}-logo.png" alt="">
+                <div id="p1f1-test" class="text-center">${factionOnePlayerOne}</div>
+            </div>
+    
+            <div class="">
+                <img class="faclogo" src="/img/logo/${f2p1Logo}-logo.png" alt="">
+                <div id="p1f2-test" class="text-center">${factionTwoPlayerOne}</div>
+            </div>
+        </div>
+        `;
+
+        //add results for p2 to html
+        p2Results.innerHTML = `
+        <div class="">
+            <div class="text-center fw-bold">Player 2</div>
+        </div>
+    
+        <div id="p2" class="d-flex justify-content-center">      
+            <div class="">
+                <img class="faclogo" src="/img/logo/${f1p2Logo}-logo.png" alt="">
+                <div id="p2f1" class="text-center">${factionOnePlayerTwo}</div>
+            </div>
+    
+            <div class="">
+                <img class="faclogo" src="/img/logo/${f2p2Logo}-logo.png" alt="">
+                <div id="p2f2" class="text-center">${factionTwoPlayerTwo}</div>
+            </div>
+        </div>
+        `;
+
+        //add results for p3 to html
+        p3Results.innerHTML = `
+        <div class="">
+            <div class="text-center fw-bold">Player 3</div>
+        </div>
+    
+        <div id="p3" class="d-flex justify-content-center">      
+            <div class="">
+                <img class="faclogo" src="/img/logo/${f1p3Logo}-logo.png" alt="">
+                <div id="p3f1" class="text-center">${factionOnePlayerThree}</div>
+            </div>
+    
+            <div class="">
+                <img class="faclogo" src="/img/logo/${f2p3Logo}-logo.png" alt="">
+                <div id="p3f2" class="text-center">${factionTwoPlayerThree}</div>
+            </div>
+        </div>
+        `;
+
+        //clear results for p4
+        p4Results.innerHTML = '';
 
     //function to make extra player faction results display none
-    playerFourList.style.display = 'none';
+    // playerFourList.style.display = 'none';
     
     //function to make faction list have a display of none
-    factionList.style.display = 'none';
+    factionList.classList.remove('d-flex');
+    factionList.classList.add('d-none');
 });
 
 //functions to generate random factions for four players
@@ -357,28 +384,6 @@ fourPlayers.addEventListener('click', e => {
     const availableFactionsP1F2 = availableFactionsP1F1.filter((item) => item!==factionTwoPlayerOne);
     console.log(availableFactionsP1F2);
 
-        //get ul for p1 draft results
-        const p1Draft = document.getElementById('p1');
-    
-        //get list items of factions p1
-        const p1f1List = document.getElementById('p1f1');
-        const p1f2List = document.getElementById('p1f2');
-    
-        //remove factions for p1
-        p1f1List.remove();
-        p1f2List.remove();
-    
-        //append factions for player one to html
-        const p1f1 = document.createElement('li');
-        p1f1.setAttribute('id','p1f1');
-        p1f1.textContent = `${factionOnePlayerOne}`;
-        p1Draft.append(p1f1);
-    
-        const p1f2 = document.createElement('li');
-        p1f2.setAttribute('id','p1f2');
-        p1f2.textContent = `${factionTwoPlayerOne}`;
-        p1Draft.append(p1f2);
-
     //function to choose an available 1st faction for player two
     const randomFactionOnePlayerTwo = () => {
         randomFaction = Math.floor(Math.random() * availableFactionsP1F2.length);
@@ -410,28 +415,6 @@ fourPlayers.addEventListener('click', e => {
     //remove player two's 2nd faction
     const availableFactionsP2F2 = availableFactionsP2F1.filter((item) => item!==factionTwoPlayerTwo);
     console.log(availableFactionsP2F2);
-
-        //get ul for p2 draft results
-        const p2Draft = document.getElementById('p2');
-    
-        //get list items of factions p2
-        const p2f1List = document.getElementById('p2f1');
-        const p2f2List = document.getElementById('p2f2');
-    
-        //remove factions for p2
-        p2f1List.remove();
-        p2f2List.remove();
-    
-        //append factions for p2 to html
-        const p2f1 = document.createElement('li');
-        p2f1.setAttribute('id','p2f1');
-        p2f1.textContent = `${factionOnePlayerTwo}`;
-        p2Draft.append(p2f1);
-    
-        const p2f2 = document.createElement('li');
-        p2f2.setAttribute('id','p2f2');
-        p2f2.textContent = `${factionTwoPlayerTwo}`;
-        p2Draft.append(p2f2);
 
     //function to choose an available 1st faction for player three
     const randomFactionOnePlayerThree = () => {
@@ -465,28 +448,6 @@ fourPlayers.addEventListener('click', e => {
     const availableFactionsP3F2 = availableFactionsP3F1.filter((item) => item!==factionTwoPlayerThree);
     console.log(availableFactionsP3F2);
 
-            //get ul for p3 draft results
-            const p3Draft = document.getElementById('p3');
-    
-            //get list items of factions p2
-            const p3f1List = document.getElementById('p3f1');
-            const p3f2List = document.getElementById('p3f2');
-        
-            //remove factions for p3
-            p3f1List.remove();
-            p3f2List.remove();
-        
-            //append factions for 32 to html
-            const p3f1 = document.createElement('li');
-            p3f1.setAttribute('id','p3f1');
-            p3f1.textContent = `${factionOnePlayerThree}`;
-            p3Draft.append(p3f1);
-        
-            const p3f2 = document.createElement('li');
-            p3f2.setAttribute('id','p3f2');
-            p3f2.textContent = `${factionTwoPlayerThree}`;
-            p3Draft.append(p3f2);
-
     //function to choose an available 1st faction for player four
     const randomFactionOnePlayerFour = () => {
         randomFaction = Math.floor(Math.random() * availableFactionsP3F2.length);
@@ -519,36 +480,116 @@ fourPlayers.addEventListener('click', e => {
     const availableFactionsP4F2 = availableFactionsP4F1.filter((item) => item!==factionTwoPlayerFour);
     console.log(availableFactionsP4F2);
 
-            //get ul for p4 draft results
-            const p4Draft = document.getElementById('p4');
-    
-            //get list items of factions p4
-            const p4f1List = document.getElementById('p4f1');
-            const p4f2List = document.getElementById('p4f2');
-        
-            //remove factions for p4
-            p4f1List.remove();
-            p4f2List.remove();
-        
-            //append factions for p4 to html
-            const p4f1 = document.createElement('li');
-            p4f1.setAttribute('id','p4f1');
-            p4f1.textContent = `${factionOnePlayerFour}`;
-            p4Draft.append(p4f1);
-        
-            const p4f2 = document.createElement('li');
-            p4f2.setAttribute('id','p4f2');
-            p4f2.textContent = `${factionTwoPlayerFour}`;
-            p4Draft.append(p4f2);
-
-    //function to make player faction results viewable
+    // function to make player faction results viewable
     if(draftResults.classList.contains('d-none')){
         draftResults.classList.remove('d-none');
+        draftResults.classList.add('d-flex');
     };
 
     
     //function to make faction list have a display of none
-    factionList.style.display = 'none';
+    factionList.classList.remove('d-flex');
+    factionList.classList.add('d-none');
+
+    //make factions to lowercase
+        //player 1
+        const f1p1Logo = factionOnePlayerOne.toLowerCase();
+        const f2p1Logo = factionTwoPlayerOne.toLowerCase();
+
+        //player 2
+        const f1p2Logo = factionOnePlayerTwo.toLowerCase();
+        const f2p2Logo = factionTwoPlayerTwo.toLowerCase();
+
+        //player 3
+        const f1p3Logo = factionOnePlayerThree.toLowerCase();
+        const f2p3Logo = factionTwoPlayerThree.toLowerCase();
+
+        //player 4
+        const f1p4Logo = factionOnePlayerFour.toLowerCase();
+        const f2p4Logo = factionTwoPlayerFour.toLowerCase();
+
+        //get container for each player's draft results
+        const p1Results = document.getElementById('p1-container');
+        const p2Results = document.getElementById('p2-container');
+        const p3Results = document.getElementById('p3-container');
+        const p4Results = document.getElementById('p4-container');
+
+        //add results for p1 to html
+        p1Results.innerHTML = `
+        <div class="">
+            <div class="text-center fw-bold">Player 1</div>
+        </div>
+    
+        <div id="p1-test" class="d-flex justify-content-center">      
+            <div class="">
+                <img class="faclogo" src="/img/logo/${f1p1Logo}-logo.png" alt="">
+                <div id="p1f1-test" class="text-center">${factionOnePlayerOne}</div>
+            </div>
+    
+            <div class="">
+                <img class="faclogo" src="/img/logo/${f2p1Logo}-logo.png" alt="">
+                <div id="p1f2-test" class="text-center">${factionTwoPlayerOne}</div>
+            </div>
+        </div>
+        `;
+
+        //add results for p2 to html
+        p2Results.innerHTML = `
+        <div class="">
+            <div class="text-center fw-bold">Player 2</div>
+        </div>
+    
+        <div id="p2" class="d-flex justify-content-center">      
+            <div class="">
+                <img class="faclogo" src="/img/logo/${f1p2Logo}-logo.png" alt="">
+                <div id="p2f1" class="text-center">${factionOnePlayerTwo}</div>
+            </div>
+    
+            <div class="">
+                <img class="faclogo" src="/img/logo/${f2p2Logo}-logo.png" alt="">
+                <div id="p2f2" class="text-center">${factionTwoPlayerTwo}</div>
+            </div>
+        </div>
+        `;
+
+        //add results for p3 to html
+        p3Results.innerHTML = `
+        <div class="">
+            <div class="text-center fw-bold">Player 3</div>
+        </div>
+    
+        <div id="p3" class="d-flex justify-content-center">      
+            <div class="">
+                <img class="faclogo" src="/img/logo/${f1p3Logo}-logo.png" alt="">
+                <div id="p3f1" class="text-center">${factionOnePlayerThree}</div>
+            </div>
+    
+            <div class="">
+                <img class="faclogo" src="/img/logo/${f2p3Logo}-logo.png" alt="">
+                <div id="p3f2" class="text-center">${factionTwoPlayerThree}</div>
+            </div>
+        </div>
+        `;
+
+        //add results for p4 to html
+        p4Results.innerHTML = `
+        <div class="">
+            <div class="text-center fw-bold">Player 4</div>
+        </div>
+    
+        <div id="p4" class="d-flex justify-content-center">      
+            <div class="">
+                <img class="faclogo" src="/img/logo/${f1p4Logo}-logo.png" alt="">
+                <div id="p4f1" class="text-center">${factionOnePlayerFour}</div>
+            </div>
+    
+            <div class="">
+                <img class="faclogo" src="/img/logo/${f2p4Logo}-logo.png" alt="">
+                <div id="p4f2" class="text-center">${factionTwoPlayerFour}</div>
+            </div>
+        </div>
+        `;
+
 });
 
 // functions to choose 2 random factions for player one
