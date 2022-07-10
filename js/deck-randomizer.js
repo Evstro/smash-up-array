@@ -117,12 +117,12 @@ twoPlayers.addEventListener('click', e => {
     
         <div id="p1-test" class="d-flex justify-content-center">      
             <div class="">
-                <img class="faclogo" src="/img/logo/${f1p1Logo}-logo.png" alt="">
+                <img class="faclogo" src="img/logo/${f1p1Logo}-logo.png" alt="">
                 <div id="p1f1-test" class="text-center">${factionOnePlayerOne}</div>
             </div>
     
             <div class="">
-                <img class="faclogo" src="/img/logo/${f2p1Logo}-logo.png" alt="">
+                <img class="faclogo" src="img/logo/${f2p1Logo}-logo.png" alt="">
                 <div id="p1f2-test" class="text-center">${factionTwoPlayerOne}</div>
             </div>
         </div>
@@ -136,12 +136,12 @@ twoPlayers.addEventListener('click', e => {
     
         <div id="p2" class="d-flex justify-content-center">      
             <div class="">
-                <img class="faclogo" src="/img/logo/${f1p2Logo}-logo.png" alt="">
+                <img class="faclogo" src="img/logo/${f1p2Logo}-logo.png" alt="">
                 <div id="p2f1" class="text-center">${factionOnePlayerTwo}</div>
             </div>
     
             <div class="">
-                <img class="faclogo" src="/img/logo/${f2p2Logo}-logo.png" alt="">
+                <img class="faclogo" src="img/logo/${f2p2Logo}-logo.png" alt="">
                 <div id="p2f2" class="text-center">${factionTwoPlayerTwo}</div>
             </div>
         </div>
@@ -289,12 +289,12 @@ threePlayers.addEventListener('click', e => {
     
         <div id="p1-test" class="d-flex justify-content-center">      
             <div class="">
-                <img class="faclogo" src="/img/logo/${f1p1Logo}-logo.png" alt="">
+                <img class="faclogo" src="img/logo/${f1p1Logo}-logo.png" alt="">
                 <div id="p1f1-test" class="text-center">${factionOnePlayerOne}</div>
             </div>
     
             <div class="">
-                <img class="faclogo" src="/img/logo/${f2p1Logo}-logo.png" alt="">
+                <img class="faclogo" src="img/logo/${f2p1Logo}-logo.png" alt="">
                 <div id="p1f2-test" class="text-center">${factionTwoPlayerOne}</div>
             </div>
         </div>
@@ -308,12 +308,12 @@ threePlayers.addEventListener('click', e => {
     
         <div id="p2" class="d-flex justify-content-center">      
             <div class="">
-                <img class="faclogo" src="/img/logo/${f1p2Logo}-logo.png" alt="">
+                <img class="faclogo" src="img/logo/${f1p2Logo}-logo.png" alt="">
                 <div id="p2f1" class="text-center">${factionOnePlayerTwo}</div>
             </div>
     
             <div class="">
-                <img class="faclogo" src="/img/logo/${f2p2Logo}-logo.png" alt="">
+                <img class="faclogo" src="img/logo/${f2p2Logo}-logo.png" alt="">
                 <div id="p2f2" class="text-center">${factionTwoPlayerTwo}</div>
             </div>
         </div>
@@ -327,12 +327,12 @@ threePlayers.addEventListener('click', e => {
     
         <div id="p3" class="d-flex justify-content-center">      
             <div class="">
-                <img class="faclogo" src="/img/logo/${f1p3Logo}-logo.png" alt="">
+                <img class="faclogo" src="img/logo/${f1p3Logo}-logo.png" alt="">
                 <div id="p3f1" class="text-center">${factionOnePlayerThree}</div>
             </div>
     
             <div class="">
-                <img class="faclogo" src="/img/logo/${f2p3Logo}-logo.png" alt="">
+                <img class="faclogo" src="img/logo/${f2p3Logo}-logo.png" alt="">
                 <div id="p3f2" class="text-center">${factionTwoPlayerThree}</div>
             </div>
         </div>
@@ -522,12 +522,12 @@ fourPlayers.addEventListener('click', e => {
     
         <div id="p1-test" class="d-flex justify-content-center">      
             <div class="">
-                <img class="faclogo" src="/img/logo/${f1p1Logo}-logo.png" alt="">
+                <img class="faclogo" src="img/logo/${f1p1Logo}-logo.png" alt="">
                 <div id="p1f1-test" class="text-center">${factionOnePlayerOne}</div>
             </div>
     
             <div class="">
-                <img class="faclogo" src="/img/logo/${f2p1Logo}-logo.png" alt="">
+                <img class="faclogo" src="img/logo/${f2p1Logo}-logo.png" alt="">
                 <div id="p1f2-test" class="text-center">${factionTwoPlayerOne}</div>
             </div>
         </div>
@@ -541,12 +541,12 @@ fourPlayers.addEventListener('click', e => {
     
         <div id="p2" class="d-flex justify-content-center">      
             <div class="">
-                <img class="faclogo" src="/img/logo/${f1p2Logo}-logo.png" alt="">
+                <img class="faclogo" src="img/logo/${f1p2Logo}-logo.png" alt="">
                 <div id="p2f1" class="text-center">${factionOnePlayerTwo}</div>
             </div>
     
             <div class="">
-                <img class="faclogo" src="/img/logo/${f2p2Logo}-logo.png" alt="">
+                <img class="faclogo" src="img/logo/${f2p2Logo}-logo.png" alt="">
                 <div id="p2f2" class="text-center">${factionTwoPlayerTwo}</div>
             </div>
         </div>
@@ -560,12 +560,12 @@ fourPlayers.addEventListener('click', e => {
     
         <div id="p3" class="d-flex justify-content-center">      
             <div class="">
-                <img class="faclogo" src="/img/logo/${f1p3Logo}-logo.png" alt="">
+                <img class="faclogo" src="img/logo/${f1p3Logo}-logo.png" alt="">
                 <div id="p3f1" class="text-center">${factionOnePlayerThree}</div>
             </div>
     
             <div class="">
-                <img class="faclogo" src="/img/logo/${f2p3Logo}-logo.png" alt="">
+                <img class="faclogo" src="img/logo/${f2p3Logo}-logo.png" alt="">
                 <div id="p3f2" class="text-center">${factionTwoPlayerThree}</div>
             </div>
         </div>
@@ -579,12 +579,12 @@ fourPlayers.addEventListener('click', e => {
     
         <div id="p4" class="d-flex justify-content-center">      
             <div class="">
-                <img class="faclogo" src="/img/logo/${f1p4Logo}-logo.png" alt="">
+                <img class="faclogo" src="img/logo/${f1p4Logo}-logo.png" alt="">
                 <div id="p4f1" class="text-center">${factionOnePlayerFour}</div>
             </div>
     
             <div class="">
-                <img class="faclogo" src="/img/logo/${f2p4Logo}-logo.png" alt="">
+                <img class="faclogo" src="img/logo/${f2p4Logo}-logo.png" alt="">
                 <div id="p4f2" class="text-center">${factionTwoPlayerFour}</div>
             </div>
         </div>
